@@ -1,0 +1,226 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testng-results ignored="48" total="56" passed="8" failed="0" skipped="0">
+  <reporter-output>
+  </reporter-output>
+  <suite started-at="2022-06-02T09:14:48 IST" name="Suite" finished-at="2022-06-02T09:14:48 IST" duration-ms="0">
+    <groups>
+    </groups>
+  </suite> <!-- Suite -->
+  <suite started-at="2022-06-02T09:12:55 IST" name="Suite (1)" finished-at="2022-06-02T09:14:46 IST" duration-ms="111582">
+    <groups>
+    </groups>
+    <test started-at="2022-06-02T09:12:55 IST" name="Test" finished-at="2022-06-02T09:14:46 IST" duration-ms="111582">
+      <class name="Mobile.TestLogin">
+        <test-method is-config="true" signature="initializeDriver(java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String)[pri:0, instance:Mobile.TestLogin@20a14b55]" started-at="2022-06-02T09:12:43 IST" name="initializeDriver" finished-at="2022-06-02T09:12:55 IST" duration-ms="11599" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[Production]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[Denmark]]>
+              </value>
+            </param>
+            <param index="2">
+              <value>
+                <![CDATA[Apcoa]]>
+              </value>
+            </param>
+            <param index="3">
+              <value>
+                <![CDATA[Android]]>
+              </value>
+            </param>
+            <param index="4">
+              <value>
+                <![CDATA[Personal Profile]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- initializeDriver -->
+        <test-method is-config="true" signature="initializeAssertions()[pri:0, instance:Mobile.TestLogin@20a14b55]" started-at="2022-06-02T09:12:55 IST" name="initializeAssertions" finished-at="2022-06-02T09:12:55 IST" duration-ms="0" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- initializeAssertions -->
+        <test-method signature="selectCountry()[pri:1, instance:Mobile.TestLogin@20a14b55]" started-at="2022-06-02T09:12:55 IST" name="selectCountry" finished-at="2022-06-02T09:13:12 IST" duration-ms="17082" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- selectCountry -->
+        <test-method is-config="true" signature="AssertAll()[pri:0, instance:Mobile.TestLogin@20a14b55]" started-at="2022-06-02T09:13:12 IST" name="AssertAll" finished-at="2022-06-02T09:13:12 IST" duration-ms="1" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- AssertAll -->
+        <test-method is-config="true" signature="initializeAssertions()[pri:0, instance:Mobile.TestLogin@20a14b55]" started-at="2022-06-02T09:13:12 IST" name="initializeAssertions" finished-at="2022-06-02T09:13:12 IST" duration-ms="0" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- initializeAssertions -->
+        <test-method signature="NoSessionWithoutPaymentMethod()[pri:12, instance:Mobile.TestLogin@20a14b55]" started-at="2022-06-02T09:13:12 IST" name="NoSessionWithoutPaymentMethod" finished-at="2022-06-02T09:14:46 IST" duration-ms="94493" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- NoSessionWithoutPaymentMethod -->
+        <test-method is-config="true" signature="AssertAll()[pri:0, instance:Mobile.TestLogin@20a14b55]" started-at="2022-06-02T09:14:46 IST" name="AssertAll" finished-at="2022-06-02T09:14:46 IST" duration-ms="1" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- AssertAll -->
+        <test-method is-config="true" signature="Teardown()[pri:0, instance:Mobile.TestLogin@20a14b55]" started-at="2022-06-02T09:14:46 IST" name="Teardown" finished-at="2022-06-02T09:14:48 IST" duration-ms="1103" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- Teardown -->
+      </class> <!-- Mobile.TestLogin -->
+    </test> <!-- Test -->
+  </suite> <!-- Suite (1) -->
+  <suite started-at="2022-06-02T09:08:26 IST" name="Suite (0)" finished-at="2022-06-02T09:12:42 IST" duration-ms="255505">
+    <groups>
+    </groups>
+    <test started-at="2022-06-02T09:08:26 IST" name="Test" finished-at="2022-06-02T09:12:42 IST" duration-ms="255505">
+      <class name="Mobile.TestLogin">
+        <test-method is-config="true" signature="initializeDriver(java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String)[pri:0, instance:Mobile.TestLogin@3d3ba765]" started-at="2022-06-02T09:08:15 IST" name="initializeDriver" finished-at="2022-06-02T09:08:26 IST" duration-ms="10928" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[Production]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[Denmark]]>
+              </value>
+            </param>
+            <param index="2">
+              <value>
+                <![CDATA[Apcoa]]>
+              </value>
+            </param>
+            <param index="3">
+              <value>
+                <![CDATA[Android]]>
+              </value>
+            </param>
+            <param index="4">
+              <value>
+                <![CDATA[Personal Profile]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- initializeDriver -->
+        <test-method is-config="true" signature="initializeAssertions()[pri:0, instance:Mobile.TestLogin@3d3ba765]" started-at="2022-06-02T09:08:26 IST" name="initializeAssertions" finished-at="2022-06-02T09:08:26 IST" duration-ms="1" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- initializeAssertions -->
+        <test-method signature="selectCountry()[pri:1, instance:Mobile.TestLogin@3d3ba765]" started-at="2022-06-02T09:08:26 IST" name="selectCountry" finished-at="2022-06-02T09:08:43 IST" duration-ms="16486" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- selectCountry -->
+        <test-method is-config="true" signature="AssertAll()[pri:0, instance:Mobile.TestLogin@3d3ba765]" started-at="2022-06-02T09:08:43 IST" name="AssertAll" finished-at="2022-06-02T09:08:43 IST" duration-ms="0" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- AssertAll -->
+        <test-method is-config="true" signature="initializeAssertions()[pri:0, instance:Mobile.TestLogin@3d3ba765]" started-at="2022-06-02T09:08:44 IST" name="initializeAssertions" finished-at="2022-06-02T09:08:44 IST" duration-ms="1" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- initializeAssertions -->
+        <test-method signature="loginAppcoa(MobileObjectMapper.LoginMapper)[pri:2, instance:Mobile.TestLogin@3d3ba765]" started-at="2022-06-02T09:08:44 IST" name="loginAppcoa" data-provider="getLoginData" finished-at="2022-06-02T09:09:40 IST" duration-ms="56164" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[LoginMapper{email='nikhitadk@yopmail.com', password='testing', username='Nikhita Patnaik'}]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- loginAppcoa -->
+        <test-method is-config="true" signature="AssertAll()[pri:0, instance:Mobile.TestLogin@3d3ba765]" started-at="2022-06-02T09:09:40 IST" name="AssertAll" finished-at="2022-06-02T09:09:40 IST" duration-ms="0" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- AssertAll -->
+        <test-method is-config="true" signature="initializeAssertions()[pri:0, instance:Mobile.TestLogin@3d3ba765]" started-at="2022-06-02T09:09:40 IST" name="initializeAssertions" finished-at="2022-06-02T09:09:40 IST" duration-ms="0" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- initializeAssertions -->
+        <test-method signature="addVehicle(MobileObjectMapper.VehicleMapper)[pri:3, instance:Mobile.TestLogin@3d3ba765]" started-at="2022-06-02T09:09:40 IST" name="addVehicle" data-provider="getVehicleData" finished-at="2022-06-02T09:09:57 IST" duration-ms="17670" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[VehicleMapper{lpr='D7777R'}]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- addVehicle -->
+        <test-method is-config="true" signature="AssertAll()[pri:0, instance:Mobile.TestLogin@3d3ba765]" started-at="2022-06-02T09:09:57 IST" name="AssertAll" finished-at="2022-06-02T09:09:57 IST" duration-ms="0" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- AssertAll -->
+        <test-method is-config="true" signature="initializeAssertions()[pri:0, instance:Mobile.TestLogin@3d3ba765]" started-at="2022-06-02T09:09:57 IST" name="initializeAssertions" finished-at="2022-06-02T09:09:57 IST" duration-ms="0" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- initializeAssertions -->
+        <test-method signature="startExtendStopSession(MobileObjectMapper.ParkingMapper)[pri:5, instance:Mobile.TestLogin@3d3ba765]" started-at="2022-06-02T09:09:57 IST" name="startExtendStopSession" data-provider="getParkingData" finished-at="2022-06-02T09:11:58 IST" duration-ms="120332" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[ParkingMapper{parkingname='Axel Towers', parkingidentifier='Axel Towers', currency='DKK'}]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- startExtendStopSession -->
+        <test-method is-config="true" signature="AssertAll()[pri:0, instance:Mobile.TestLogin@3d3ba765]" started-at="2022-06-02T09:11:58 IST" name="AssertAll" finished-at="2022-06-02T09:11:58 IST" duration-ms="1" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- AssertAll -->
+        <test-method is-config="true" signature="initializeAssertions()[pri:0, instance:Mobile.TestLogin@3d3ba765]" started-at="2022-06-02T09:11:58 IST" name="initializeAssertions" finished-at="2022-06-02T09:11:58 IST" duration-ms="0" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- initializeAssertions -->
+        <test-method signature="deleteVehicle(MobileObjectMapper.VehicleMapper)[pri:6, instance:Mobile.TestLogin@3d3ba765]" started-at="2022-06-02T09:11:58 IST" name="deleteVehicle" data-provider="getVehicleData" finished-at="2022-06-02T09:12:12 IST" duration-ms="13733" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[VehicleMapper{lpr='D7777R'}]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- deleteVehicle -->
+        <test-method is-config="true" signature="AssertAll()[pri:0, instance:Mobile.TestLogin@3d3ba765]" started-at="2022-06-02T09:12:12 IST" name="AssertAll" finished-at="2022-06-02T09:12:12 IST" duration-ms="0" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- AssertAll -->
+        <test-method signature="freeParkingCheck(MobileObjectMapper.FreeParkingMapper)[pri:9, instance:Mobile.TestLogin@3d3ba765]" started-at="2022-06-02T09:12:12 IST" name="freeParkingCheck" data-provider="getFreeParkingData" finished-at="2022-06-02T09:12:42 IST" duration-ms="29854" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[FreeParkingMapper{parkingidentifier='Axel Towers', promo='QADK16HOUR', currency='DKK'}]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- freeParkingCheck -->
+        <test-method is-config="true" signature="initializeAssertions()[pri:0, instance:Mobile.TestLogin@3d3ba765]" started-at="2022-06-02T09:12:12 IST" name="initializeAssertions" finished-at="2022-06-02T09:12:12 IST" duration-ms="0" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- initializeAssertions -->
+        <test-method is-config="true" signature="AssertAll()[pri:0, instance:Mobile.TestLogin@3d3ba765]" started-at="2022-06-02T09:12:42 IST" name="AssertAll" finished-at="2022-06-02T09:12:42 IST" duration-ms="0" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- AssertAll -->
+        <test-method is-config="true" signature="Teardown()[pri:0, instance:Mobile.TestLogin@3d3ba765]" started-at="2022-06-02T09:12:42 IST" name="Teardown" finished-at="2022-06-02T09:12:43 IST" duration-ms="1312" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- Teardown -->
+      </class> <!-- Mobile.TestLogin -->
+    </test> <!-- Test -->
+  </suite> <!-- Suite (0) -->
+</testng-results>

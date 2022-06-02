@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+<suite name="Suite">
+<parameter name="Tenant" value="GreenParking" />
+<parameter name="Environment" value="Production" />
+<parameter name="Country" value="Dubai" />
+<parameter name="Platform" value="Android" />
+<listeners>
+	<listener class-name="TestNGListeners.ApcoaListeners"></listener>
+</listeners>
+  <test thread-count="5" name="Test">
+    <classes>
+			<class name="Mobile.TestLogin">
+				<methods>
+					<exclude name="EpmpStartButtonCheck" />
+				</methods>
+			</class>
+		</classes>
+  </test> <!-- Test -->
+</suite> <!-- Suite -->

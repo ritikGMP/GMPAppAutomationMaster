@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+<suite name="Failed suite [Suite]" guice-stage="DEVELOPMENT">
+  <parameter name="Tenant" value="Apcoa"/>
+  <parameter name="Platform" value="Android"/>
+  <parameter name="Environment" value="Production"/>
+  <parameter name="Country" value="Sweden"/>
+  <parameter name="Profile" value="Personal Profile"/>
+  <listeners>
+    <listener class-name="TestNGListeners.ApcoaListeners"/>
+  </listeners>
+  <test thread-count="5" name="Test(failed)">
+    <classes>
+      <class name="Mobile.TestLogin">
+        <methods>
+          <include name="initializeAssertions"/>
+          <include name="AssertAll"/>
+          <include name="BuyPass" invocation-numbers="0"/>
+          <include name="startExtendStopSession" invocation-numbers="0"/>
+          <include name="initializeDriver"/>
+          <include name="Teardown"/>
+          <include name="BuisnessProfileCreation"/>
+        </methods>
+      </class> <!-- Mobile.TestLogin -->
+    </classes>
+  </test> <!-- Test(failed) -->
+</suite> <!-- Failed suite [Suite] -->

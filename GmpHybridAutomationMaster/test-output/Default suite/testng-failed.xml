@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+<suite name="Failed suite [Default suite]" guice-stage="DEVELOPMENT">
+  <test thread-count="5" name="Default test(failed)">
+    <classes>
+      <class name="Mobile.TestLogin">
+        <methods>
+          <include name="CheckActivevehicle"/>
+          <include name="ChangingDefaultProfile"/>
+          <include name="OperationalHrsFilterCheck"/>
+          <include name="loginAppcoa"/>
+          <include name="StartPostpay"/>
+          <include name="freeParkingCheck"/>
+          <include name="addVehicle"/>
+          <include name="SessionAfterOperationalHrs"/>
+          <include name="Teardown"/>
+          <include name="BuisnessProfileCreation"/>
+          <include name="selectCountry"/>
+          <include name="AssertAll"/>
+          <include name="BuyPass"/>
+          <include name="EditPersonalDetails"/>
+          <include name="StopPostpay"/>
+          <include name="TarrifAfterFreeParkingHrsInExtendSession"/>
+          <include name="DiscountByQRScan"/>
+          <include name="ProfileAutoSwitch"/>
+          <include name="initializeDriver"/>
+          <include name="deepLink"/>
+          <include name="EpmpStartButtonCheck"/>
+          <include name="initializeAssertions"/>
+          <include name="verifyInvoicePDF"/>
+          <include name="deleteVehicle"/>
+          <include name="NoSessionWithoutPaymentMethod"/>
+          <include name="startExtendStopSession"/>
+          <include name="CorporateProfileCreation"/>
+          <include name="EVchargingButtonCheck"/>
+        </methods>
+      </class> <!-- Mobile.TestLogin -->
+    </classes>
+  </test> <!-- Default test(failed) -->
+</suite> <!-- Failed suite [Default suite] -->

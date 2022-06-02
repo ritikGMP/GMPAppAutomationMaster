@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+<suite name="Suite">
+<parameter name="Environment" value="Staging" />
+<parameter name="Country" value="Austria" />
+<listeners>
+	<listener class-name="TestNGListeners.ApcoaListeners"></listener>
+</listeners>
+  <test thread-count="5" name="Test">
+    <classes>
+      <class name="Mobile.TestLogin"/>
+    </classes>
+  </test> <!-- Test -->
+</suite> <!-- Suite -->
