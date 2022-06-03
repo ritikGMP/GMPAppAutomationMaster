@@ -301,9 +301,11 @@ public class TestLogin {
 	@Test(priority = 5, dataProvider = "getParkingData")
 	public void startExtendStopSession(ParkingMapper parkingMapper) throws InterruptedException {
 		//Thread.sleep(2000);
+		SessionCreationPage SC = new SessionCreationPage(AutomationConfiguration.AppiumDriver);
+		try {
 		PageHomeApcoa home = new PageHomeApcoa(AutomationConfiguration.AppiumDriver);
 		home.dismissFoodAlert();
-		SessionCreationPage SC = new SessionCreationPage(AutomationConfiguration.AppiumDriver);
+		
 		String country = AutomationConfiguration.Country;
 		SoftAssert softAssert = new SoftAssert();
 
@@ -315,6 +317,12 @@ public class TestLogin {
 
 		softAssert.assertAll();
 		PageAddVehicle.goBack();
+		}
+		
+		finally
+		{
+			SC.GetBackToHomeScreen();
+		}
 	}
 
 
@@ -324,12 +332,19 @@ public class TestLogin {
 	 */
 	@Test(priority=7,dataProvider = "getBuyPassData")
 	public void BuyPass(BuyPassMapper passMapper)throws InterruptedException{
+		SessionCreationPage SC = new SessionCreationPage(AutomationConfiguration.AppiumDriver);
+		try {
 		Thread.sleep(4000);
 		PageBuyPass PB= new PageBuyPass(AutomationConfiguration.AppiumDriver);
 		String Parking =passMapper.getParkingidentifier();
 		String PassPromo=passMapper.getpromo();
 
 		PB.searchAreaAndBuyPass(Parking,PassPromo);
+		}
+		finally
+		{
+			SC.GetBackToHomeScreen();
+		}
 	}
 
 
@@ -337,7 +352,7 @@ public class TestLogin {
 	 * Implementing the check of Start Button in EPMP carparks.
 	 * Environment:Staging/Production
 	 */
-	@Test(priority = 12)
+	@Test(priority = 16)
 	public void EpmpStartButtonCheck() throws InterruptedException {
 
 		Thread.sleep(2000);
@@ -473,10 +488,15 @@ public class TestLogin {
 	 */
 	@Test(priority=8)
 	public void BuisnessProfileCreation() throws InterruptedException
-	{   
+	{    
 		SessionCreationPage SC = new SessionCreationPage(AutomationConfiguration.AppiumDriver);
+		try {
 		SC.DeleteBuisnessProfile();
 		SC.AddBuisnessprofile();
+		}
+		finally {
+			SC.GetBackToHomeScreen();
+		}
 
 	}
 
@@ -681,7 +701,7 @@ public class TestLogin {
 	}
 	
 
-	@Test(priority=16)
+	@Test(priority=12)
 	public void EVchargingButtonCheck() throws InterruptedException
 	{   String ActualParkingName;
 	SoftAssert SA=new SoftAssert();

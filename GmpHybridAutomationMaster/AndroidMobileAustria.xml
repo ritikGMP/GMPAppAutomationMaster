@@ -21,7 +21,7 @@
 					<include name="BuyPass" />
 					
 					
-					<include name="ChangingDefaultProfile" />
+					<!-- <include name="ChangingDefaultProfile" /> -->
 					
 					
 				    

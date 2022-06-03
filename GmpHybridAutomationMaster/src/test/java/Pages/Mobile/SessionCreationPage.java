@@ -149,6 +149,11 @@ public class SessionCreationPage {
 
 	@AndroidFindBy(xpath="//*[contains(@resource-id,':id/iv_close')]")
 	private WebElement closePayment;
+	
+	@AndroidFindBy(xpath="//*[contains(@resource-id,':id/iv_close') or contains(@resource-id,':id/tv_negative_action_button') or contains(@resource-id,':id/iv_back')]")
+	private WebElement close;
+	
+	
 
 	@AndroidFindBy(xpath="//*[contains(@resource-id,':id/tv_login')]")
 	private WebElement Login;
@@ -495,7 +500,10 @@ public class SessionCreationPage {
 	@AndroidFindBy(xpath="//*[contains(@resource-id,':id/tv_payment_card_number')]")
 	private WebElement PaymentCard;
 	
+	@AndroidFindBy(xpath="//*[contains(@resource-id,':id/ivNotification')]")
+	private WebElement BtnNotification;
 	
+
 	
 	@AndroidFindBy(xpath="//android.widget.TextView[contains(@text,'DOWNLOAD INVOICE')]")
 	private WebElement DownloadInvoice;
@@ -2016,6 +2024,45 @@ public class SessionCreationPage {
 		
 		SA.assertAll();
 		
+	}
+	
+	
+	
+	public void GetBackToHomeScreen() throws InterruptedException
+	{    try {
+	    	CommonUtility.GenericMethods.explicitWaitForWebElementOnly(driver,close,5);
+		  close.click();
+	       }
+	catch(Exception e)
+	{}
+		
+	   if(checknotificationbtn())
+	   {   ApcoaListeners.logInfo("Already at home screen");
+		   return;
+	   }
+	   else
+	   {  ApcoaListeners.logInfo("Not At home Screen");
+	      ApcoaListeners.logInfo("pressing the back button");
+		   ((AndroidDriver<WebElement>) AutomationConfiguration.AppiumDriver).pressKey(new KeyEvent().withKey(AndroidKey.BACK));
+	        Thread.sleep(3000);
+		   GetBackToHomeScreen();
+	   }
+	
+	
+	}
+	
+	public boolean checknotificationbtn()
+	{
+		try {
+			 if(BtnNotification.isDisplayed())
+			   {   ApcoaListeners.logInfo("Already at home screen");
+				   return true;
+			   }
+			 return false;
+		}
+		catch(Exception e) {
+			return false;
+		}
 	}
 	
 

@@ -15,13 +15,13 @@
 				<methods>
 					<include name="selectCountry" />
 					<include name="loginAppcoa" />
-					<include name="addVehicle" />
-					<include name="startExtendStopSession" />
-					<include name="deleteVehicle" />
+					 <include name="addVehicle" /> 
+					<include name="startExtendStopSession" /> 
+					 <include name="deleteVehicle" />
 					<include name="BuyPass" /> 
 					<include name="EpmpStartButtonCheck" />
 					 <include name="BuisnessProfileCreation" />
-					<include name="EVchargingButtonCheck" /> 
+					<include name="EVchargingButtonCheck" />  
 					
 					
 					
