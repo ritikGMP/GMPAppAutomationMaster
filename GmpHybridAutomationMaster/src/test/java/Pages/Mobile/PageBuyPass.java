@@ -47,6 +47,14 @@ public class PageBuyPass {
 	@AndroidFindBy(xpath="//*[contains(@resource-id,':id/rl_positive_action')]")
 	WebElement buyPassAgainButton;
 	
+	@AndroidFindBy(xpath="//*[contains(@resource-id,':id/date_picker_header_date')]")
+	WebElement PassDate;
+	
+	@AndroidFindBy(xpath="//*[contains(@resource-id,':id/date_picker_header_year')]")
+	WebElement PassYear;
+	
+	
+	
 	@AndroidFindBy(id="android:id/button1")
 	WebElement selectDate;
 	
@@ -93,6 +101,9 @@ public class PageBuyPass {
 	
 	@AndroidFindBy(xpath="//*[contains(@resource-id,':id/half_interstitial_button2')]")
 	WebElement ConfirmPromoPayment;
+	
+	@AndroidFindBy(xpath="(//*[contains(@resource-id,':id/tv_start_date')])[2]")
+	WebElement DateinPass;
 	
 	
 	
@@ -159,7 +170,15 @@ public class PageBuyPass {
 			}
 			}
 			else if(AutomationConfiguration.Country.equalsIgnoreCase("Sweden"))
-			{
+			{   if(AutomationConfiguration.Environment.equals("Staging"))
+			    {
+				  if(a.equalsIgnoreCase("Periodbiljett: 7 dagar")){//Test_notification
+					
+					purchasePassButton.get(i).click();
+					System.out.println("Clicked on purchase pass button");
+					break;
+				}
+			     }
 				if(a.equalsIgnoreCase("En dagsperiodbiljett")){//Test_notification
 			
 					purchasePassButton.get(i).click();
@@ -220,8 +239,21 @@ public class PageBuyPass {
 		Thread.sleep(4000);
 		clickOnPurchasePassButton();
 		Thread.sleep(4000);
+		String Date=PassDate.getText();
+		String Year=PassYear.getText();
+		Date=Date.split(", ")[1];
+		
+		String Month=Date.split(" ")[0];
+		String Day=Date.split(" ")[1];
+		if(Day.length()==1)
+		{
+			Day="0"+Day;
+		}
+		
+		 Date=Day+"-"+Month+"-"+Year;
+		 ApcoaListeners.logInfo("Date    :"+Date);
 		selectDate.click();
-		Thread.sleep(6000);
+		Thread.sleep(3000);
 		okButton.click();
 		Thread.sleep(6000);
 		System.out.println(promoName);
@@ -259,9 +291,16 @@ public class PageBuyPass {
 	    SA.assertAll();
 		paymentSuccessfulButton.click();
 		
+		CommonUtility.GenericMethods.explicitWaitForWebElementOnly(driver,DateinPass,10);
+		System.out.println(DateinPass.getText());
+		
+		
+	//	String passdate=DateinPass.getText().split(",")[0];
+       // SA.assertEquals(passdate,Date,"Date in Pass Purchased are Different");
+		
 		Thread.sleep(7000);
 		((AndroidDriver<WebElement>) AutomationConfiguration.AppiumDriver).pressKey(new KeyEvent().withKey(AndroidKey.BACK));
-		
+       //  SA.assertAll();
 	}
 	
 	

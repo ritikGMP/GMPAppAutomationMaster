@@ -542,7 +542,7 @@ public class SessionCreationPage {
 			ActiveSessionID = MySessionsSessionID.getText();
 			System.out.println("Active Session ID: "+ ActiveSessionID);
 
-			if(!(AutomationConfiguration.Country.equals("Denmark")||AutomationConfiguration.Country.equals("Sweden"))) {
+			if(!(AutomationConfiguration.Country.equals("Denmark")||AutomationConfiguration.Country.equals("Sweden")||AutomationConfiguration.Country.equals("Testing"))) {
 				action.press(PointOption.point(505, 1870)).waitAction(WaitOptions.waitOptions(Duration.ofMillis(1000))).moveTo(PointOption.point(528, 784)).release().perform();
 				//	Thread.sleep(3000);
 				CommonUtility.GenericMethods.explicitWaitForWebElementOnly(driver,MySessionsTotalCost,100);
@@ -588,7 +588,7 @@ public class SessionCreationPage {
 			btnclikAddPromo.sendKeys(code);
 			Thread.sleep(2000);
 			btnApplyPromo.click();
-			
+			 Thread.sleep(3000);
 		    try {
 			CommonUtility.GenericMethods.explicitWaitForWebElementOnly(driver,btnConfirmPromo,200);	
 			btnConfirmPromo.click();
@@ -977,7 +977,7 @@ public class SessionCreationPage {
 			catch(Exception e) {}
 			//btnCancelNotification2.click();
 			}
-			if(!(AutomationConfiguration.Country.equals("Denmark")||AutomationConfiguration.Country.equals("Sweden"))) {
+			if(!(AutomationConfiguration.Country.equals("Denmark")||AutomationConfiguration.Country.equals("Sweden")||AutomationConfiguration.Country.equals("Testing"))) {
 				Thread.sleep(5000);
 				CommonUtility.GenericMethods.explicitWaitForWebElementOnly(driver,paySuccessMsg,30);
 				ActualPaymentSuccess=paySuccessMsg.getText();
@@ -1034,6 +1034,12 @@ public class SessionCreationPage {
 	{ 
 		ApcoaListeners.logInfo("going to click Start Session button");
 		CommonUtility.GenericMethods.explicitWaitForWebElement(driver,gmpstartsession,100);
+		try {
+			CommonUtility.GenericMethods.explicitWaitForWebElement(driver,gmpAustriatarrifSelection,5);
+			
+		}
+		catch(Exception e)
+		{}
 		Thread.sleep(5000);
 
 
@@ -1075,7 +1081,11 @@ public class SessionCreationPage {
 		ApcoaListeners.logInfo("Intial ParkingMin in Extend Session  --------->"+ParkingMin);
 		String ParkingPrice1=ParkingPrice.getText();
 		ApcoaListeners.logInfo("Intial Parking price in Extend Session  --------->"+ParkingPrice1);
-		SA.assertEquals(TarrifName,"QAPOLANDFREETIME");
+		if(AutomationConfiguration.Environment.equals("Production"))
+			SA.assertEquals(TarrifName,"QAPOLANDFREETIME");
+		else
+			SA.assertEquals(TarrifName,"FREE2HRS");
+		
 		SA.assertEquals(ParkingHour1,"00");
 		SA.assertEquals(ParkingMin,"00");
 		SA.assertEquals(ParkingPrice1,"PLN0.00");
@@ -1585,12 +1595,11 @@ public class SessionCreationPage {
 	CommonUtility.GenericMethods.explicitWaitForWebElementOnly(driver,AddBuisnessProfile,30);
 	AddBuisnessProfile.click();
 
-	if(AutomationConfiguration.Country.equalsIgnoreCase("Sweden"))
-	{  try {
-		Thread.sleep(2000);
+	  try {
+		CommonUtility.GenericMethods.explicitWaitForWebElementOnly(driver,SelectBuisnessProfile,30);
 		SelectBuisnessProfile.click();
 	} catch(Exception e) {}
-	}
+	
 	Thread.sleep(2000);
 	ApcoaListeners.logInfo("Entering the Email id :  spoorthi@getmyparking.com");
 	enterEmail.sendKeys("spoorthi@getmyparking.com");
@@ -1671,7 +1680,14 @@ public class SessionCreationPage {
 	{   String Promo=parkingMapper.getpromo();
 
 	ApcoaListeners.logInfo("going to click Start Session button");
+	
 	CommonUtility.GenericMethods.explicitWaitForWebElement(driver,gmpstartsession,100);
+	try {
+		CommonUtility.GenericMethods.explicitWaitForWebElement(driver,gmpAustriatarrifSelection,5);
+		
+	}
+	catch(Exception e)
+	{}
 	Thread.sleep(5000);
 
 	ApcoaListeners.logInfo("Applying the Free Parking Promo Code:   "+Promo);
@@ -1857,12 +1873,24 @@ public class SessionCreationPage {
 			btnConfirmPromo.click();
 		}
 		CommonUtility.GenericMethods.explicitWaitForWebElementOnly(driver,btnConfirmPromo,50);
+		
+		
+		
+		
+		
 		AppliedPromoByQR=PromoName.getText();
 		int idx = AppliedPromoByQR.indexOf(":");
 		AppliedPromoByQR = AppliedPromoByQR.substring(idx+2);
-
+        
 		SA.assertEquals("OKAY, GOT IT!",btnConfirmPromo.getText());
 		btnConfirmPromo.click();
+		
+		CommonUtility.GenericMethods.explicitWaitForWebElementOnly(driver,ClickOnsideBar,30);
+		ClickOnsideBar.click();
+		 
+		Thread.sleep(3000);
+		 ((AndroidDriver<WebElement>) AutomationConfiguration.AppiumDriver).pressKey(new KeyEvent().withKey(AndroidKey.BACK));
+		 
 		CommonUtility.GenericMethods.explicitWaitForWebElementOnly(driver,PromoCheck,50);
 		SA.assertEquals(PromoCheck.getText(),AppliedPromoByQR);
 		ApcoaListeners.logInfo("Promo Applied Successfully     "+AppliedPromoByQR);
@@ -2028,24 +2056,27 @@ public class SessionCreationPage {
 	
 	
 	
-	public void GetBackToHomeScreen() throws InterruptedException
-	{    try {
+	public void GetBackToHomeScreen(int i) throws InterruptedException
+	{  
+		
+		try {
 	    	CommonUtility.GenericMethods.explicitWaitForWebElementOnly(driver,close,5);
 		  close.click();
 	       }
 	catch(Exception e)
 	{}
 		
-	   if(checknotificationbtn())
+	   if(checknotificationbtn()||i==10)
 	   {   ApcoaListeners.logInfo("Already at home screen");
 		   return;
 	   }
 	   else
-	   {  ApcoaListeners.logInfo("Not At home Screen");
+	   {  i++;
+		   ApcoaListeners.logInfo("Not At home Screen");
 	      ApcoaListeners.logInfo("pressing the back button");
 		   ((AndroidDriver<WebElement>) AutomationConfiguration.AppiumDriver).pressKey(new KeyEvent().withKey(AndroidKey.BACK));
 	        Thread.sleep(3000);
-		   GetBackToHomeScreen();
+		   GetBackToHomeScreen(i);
 	   }
 	
 	
@@ -2065,7 +2096,16 @@ public class SessionCreationPage {
 		}
 	}
 	
-
+   public void checkDeepLink()
+   {
+	   try {
+			CommonUtility.GenericMethods.explicitWaitForWebElement(driver,gmptarrifSelection,10);
+		}
+		catch(Exception e) {}
+	   CommonUtility.GenericMethods.explicitWaitForWebElement(driver,ParkingHour,10);
+	 //  CommonUtility.GenericMethods.explicitWaitForWebElement(driver,ParkingMinute,10);
+	 
+   }
 
 
 }

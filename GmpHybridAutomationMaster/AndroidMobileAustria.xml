@@ -15,9 +15,9 @@
 				<methods>
 					<include name="selectCountry" />
 					<include name="loginAppcoa" />
-					<include name="addVehicle" />
+					 <include name="addVehicle" />
 					<include name="startExtendStopSession" />
-					<include name="deleteVehicle" />
+					<include name="deleteVehicle" /> 
 					<include name="BuyPass" />
 					
 					

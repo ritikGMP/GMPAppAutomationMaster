@@ -1,8 +1,8 @@
-/home/ritik/eclipse-workspace/GmpHybridAutomationMaster/src/main/java/Utility/ElementScreenShot.java
-/home/ritik/eclipse-workspace/GmpHybridAutomationMaster/src/main/java/CommonUtility/AppiumGenericMethods.java
-/home/ritik/eclipse-workspace/GmpHybridAutomationMaster/src/main/java/CommonUtility/GenericMethods.java
-/home/ritik/eclipse-workspace/GmpHybridAutomationMaster/src/main/java/DataDriven/ExcelDriven.java
-/home/ritik/eclipse-workspace/GmpHybridAutomationMaster/src/main/java/Utility/ImageComparison.java
-/home/ritik/eclipse-workspace/GmpHybridAutomationMaster/src/main/java/CommonUtility/ExtentReporterNG.java
-/home/ritik/eclipse-workspace/GmpHybridAutomationMaster/src/main/java/CommonUtility/CreateSession.java
-/home/ritik/eclipse-workspace/GmpHybridAutomationMaster/src/main/java/CommonUtility/AutomationConfiguration.java
+/home/ritik/git/AppAutomation/GmpHybridAutomationMaster/src/main/java/CommonUtility/GenericMethods.java
+/home/ritik/git/AppAutomation/GmpHybridAutomationMaster/src/main/java/DataDriven/ExcelDriven.java
+/home/ritik/git/AppAutomation/GmpHybridAutomationMaster/src/main/java/CommonUtility/AppiumGenericMethods.java
+/home/ritik/git/AppAutomation/GmpHybridAutomationMaster/src/main/java/CommonUtility/CreateSession.java
+/home/ritik/git/AppAutomation/GmpHybridAutomationMaster/src/main/java/Utility/ElementScreenShot.java
+/home/ritik/git/AppAutomation/GmpHybridAutomationMaster/src/main/java/CommonUtility/AutomationConfiguration.java
+/home/ritik/git/AppAutomation/GmpHybridAutomationMaster/src/main/java/CommonUtility/ExtentReporterNG.java
+/home/ritik/git/AppAutomation/GmpHybridAutomationMaster/src/main/java/Utility/ImageComparison.java

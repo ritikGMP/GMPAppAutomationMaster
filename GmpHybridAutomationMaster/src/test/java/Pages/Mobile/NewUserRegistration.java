@@ -155,14 +155,17 @@ public class NewUserRegistration {
 	{ApcoaListeners.logInfo("Email Registration Started");
 	   
 	    try {
-		CommonUtility.GenericMethods.explicitWaitForWebElementOnly(driver,btnletGetStart,10);
-		btnletGetStart.click();
-		CommonUtility.GenericMethods.explicitWaitForWebElementOnly(driver,btnNext,8);
+	    	System.out.println("inside");
+	   
+		CommonUtility.GenericMethods.explicitWaitForWebElementOnly(driver,btnletGetStart,20);
+    	btnletGetStart.click();
+		CommonUtility.GenericMethods.explicitWaitForWebElementOnly(driver,btnNext,18);
 		btnNext.click();
 		CommonUtility.GenericMethods.explicitWaitForWebElementOnly(driver,btnAllow,8);
 		btnAllow.click();
 	    }
 	    catch(Exception e) {}
+	    
 	    try {
 		CommonUtility.GenericMethods.explicitWaitForWebElementOnly(driver,btnSignUp,20);
 		btnSignUp.click();
@@ -364,7 +367,7 @@ public class NewUserRegistration {
 		{
 			vehnum="W A "+s;
 		}
-		else if(AutomationConfiguration.Country.equalsIgnoreCase("Sweden"))
+		else if(AutomationConfiguration.Country.equalsIgnoreCase("Sweden")||AutomationConfiguration.Country.equalsIgnoreCase("Denmark"))
 		{
 			vehnum="WA"+s;
 		}

@@ -35,7 +35,7 @@ public class SessionUtils {
     	  
     	this.softAssert.assertEquals(EpmpParkingName[i], this.SC.ActualParkingName, "Parking Not Found");
     	  
-   	    this.softAssert.assertEquals(this.SC.checkEpmpStartButton(EpmpParkingName[i]),"True" ,"Test-FAILED");
+   	    this.softAssert.assertEquals(this.SC.checkEpmpStartButton(EpmpParkingName[i]),"True" ,EpmpParkingName[i]+"    "+EpmpParkingIdentifier[i]);
     	 // System.out.println(this.SC.checkEpmpStartButton());
     	}
     	
@@ -67,7 +67,7 @@ public class SessionUtils {
 //here-----------------------------
        this.SC.PaymentConfirmation();
     
-       if(!(this.country.equalsIgnoreCase("Denmark")||this.country.equalsIgnoreCase("Sweden")))
+       if(!(this.country.equalsIgnoreCase("Denmark")||this.country.equalsIgnoreCase("Sweden")||this.country.equalsIgnoreCase("Testing")))
        {
     	   System.out.println("Main ActualPaymentSuccess:" + this.SC.ActualPaymentSuccess);//Main ActualPaymentSuccess:Payment Successful
            this.softAssert.assertEquals(this.SC.ActualPaymentSuccess, "Payment Successful", "Payment Successful message fail");
@@ -103,7 +103,7 @@ public class SessionUtils {
         
         Thread.sleep(3000);
        
-        if(!(this.country.equals("Denmark")||this.country.equals("Sweden")))
+        if(!(this.country.equals("Denmark")||this.country.equals("Sweden")||this.country.equalsIgnoreCase("Testing")))
         {
        this.SC.ExtendPaymentConfirmation();
        // Thread.sleep(3000);
@@ -111,7 +111,7 @@ public class SessionUtils {
         
        
         float finalprice;
-        if(this.country.equals("Sweden")||this.country.equals("Denmark")) {
+        if(this.country.equals("Sweden")||this.country.equals("Denmark")||this.country.equalsIgnoreCase("Testing")) {
         finalprice =initialparkingprice;
         }
         else
@@ -120,7 +120,7 @@ public class SessionUtils {
         }
         this.SC.GotoMyActiveSessions();
         
-        if(this.country.equals("Denmark")||this.country.equals("Sweden")) {
+        if(this.country.equals("Denmark")||this.country.equals("Sweden")||this.country.equalsIgnoreCase("Testing")) {
         	// Thread.sleep(3000);
              return finalprice;
         }
@@ -210,7 +210,7 @@ public class SessionUtils {
         }
        */
       
-        if(!(this.country.equals("Sweden")||this.country.equals("Denmark")))
+        if(!(this.country.equals("Sweden")||this.country.equals("Denmark") ||this.country.equalsIgnoreCase("Testing")))
         this.softAssert.assertEquals(expiredsessionprice, finalprice, "Final price in expired session fail");
        
         this.softAssert.assertEquals(expiredsessionid, activesessionid, "Session ID is not matching in expired sessions.");

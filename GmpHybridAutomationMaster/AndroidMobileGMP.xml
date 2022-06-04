@@ -16,14 +16,15 @@
 				
 					<include name="selectCountry" />
 					<include name="loginAppcoa" />
-					<include name="addVehicle" />
-					<!-- <include name="startExtendStopSession" /> -->
+				 	<!-- <include name="addVehicle" />
+					 <include name="startExtendStopSession" /> 
 					<include name="deleteVehicle" />
 					<include name="EditPersonalDetails" />
 					<include name="BuisnessProfileCreation" />
-					<include name="StartPostpay" />
+					 <include name="StartPostpay" />
 					<include name="DiscountByQRScan" />
-					<include name="StopPostpay" />
+					<include name="StopPostpay" />  -->
+				 <include name="deepLink" /> 
 					
 					
 					

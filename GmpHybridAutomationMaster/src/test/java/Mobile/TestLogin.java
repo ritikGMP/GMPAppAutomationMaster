@@ -123,6 +123,8 @@ public class TestLogin {
 		return parking;	
 	}
 
+	
+	
 	@DataProvider
 	public BuyPassMapper[] getBuyPassData() throws Exception{
 		String excelfilepath = System.getProperty("user.dir") + "/src/test/java/resources/"+AutomationConfiguration.Tenant+"Dataset.xlsx";
@@ -320,8 +322,8 @@ public class TestLogin {
 		}
 		
 		finally
-		{
-			SC.GetBackToHomeScreen();
+		{   if(!AutomationConfiguration.Country.equalsIgnoreCase("Testing"))
+			SC.GetBackToHomeScreen(0);
 		}
 	}
 
@@ -343,7 +345,7 @@ public class TestLogin {
 		}
 		finally
 		{
-			SC.GetBackToHomeScreen();
+			SC.GetBackToHomeScreen(0);
 		}
 	}
 
@@ -495,7 +497,8 @@ public class TestLogin {
 		SC.AddBuisnessprofile();
 		}
 		finally {
-			SC.GetBackToHomeScreen();
+			 if(!AutomationConfiguration.Country.equalsIgnoreCase("Testing"))
+			SC.GetBackToHomeScreen(0);
 		}
 
 	}
@@ -521,7 +524,7 @@ public class TestLogin {
 	{
 		SessionCreationPage SC = new SessionCreationPage(AutomationConfiguration.AppiumDriver);
 		// SC.changingDefaultProfile("Corporate");
-		SC.changingDefaultProfile(AutomationConfiguration.Profile);
+		SC.changingDefaultProfile("Personal Profile");
 	}
 
 
@@ -531,7 +534,7 @@ public class TestLogin {
 	{
 		SessionCreationPage SC = new SessionCreationPage(AutomationConfiguration.AppiumDriver);
 		String parkingName = parkingMapper.getParkingidentifier();
-		SC.changingDefaultProfile(AutomationConfiguration.Profile);
+		SC.changingDefaultProfile("Personal Profile");
 		Thread.sleep(3000);
 		SC.GettheParking(parkingName);
 		ActiveSessionId= SC.StartPostpaySession();
@@ -544,7 +547,7 @@ public class TestLogin {
 	{
 		SessionCreationPage SC = new SessionCreationPage(AutomationConfiguration.AppiumDriver);
 		//SC.AddDiscountByQRScan(2);
-		SC.AddDiscountByQRScan(2);
+		SC.AddDiscountByQRScan(1);
 	}
 
 	@Test(priority=14)
@@ -567,13 +570,17 @@ public class TestLogin {
 	public void deepLink(ParkingMapper parkingMapper) throws IOException, InterruptedException
 	{   SessionCreationPage SC = new SessionCreationPage(AutomationConfiguration.AppiumDriver);
 	LaunchQrReader LR = new LaunchQrReader(AutomationConfiguration.AppiumDriver);
-
+   try {
 	SC.removeQR();
 	SC.excCommand("DirectLinkQr");
 	LR.launchQrReader();
-	Thread.sleep(5000);
-	SC.dialerMovement(AutomationConfiguration.Country,parkingMapper);
+	Thread.sleep(15000);
+
+	SC.checkDeepLink();
+   }
+   finally {
 	LR.KillQrScanner();
+   }
 
 	}
 
@@ -877,7 +884,8 @@ public class TestLogin {
 @Test(priority=14)
 	
 	public void EVTest() throws IOException, InterruptedException
-	{   SoftAssert SA=new SoftAssert();
+	{   
+	    SoftAssert SA=new SoftAssert();
 	    SessionCreationPage SC = new SessionCreationPage(AutomationConfiguration.AppiumDriver);
 		LaunchQrReader LR = new LaunchQrReader(AutomationConfiguration.AppiumDriver);
 		EVcharging EV=new EVcharging(AutomationConfiguration.AppiumDriver);

@@ -62,8 +62,8 @@ public class PageAddVehicle {
 	@AndroidFindBy(xpath="//*[contains(@resource-id,':id/actv_positive_button')]")
 	WebElement btnconfirmdel;
 	
-	@AndroidFindBy(xpath="//*[contains(@resource-id,':id/actv_positive_button')]")
-	WebElement btnconfirmadd;
+	@AndroidFindBy(xpath="//*[contains(@resource-id,':id/actv_positive_button') or contains(@resource-id,':id/btn_button_bottom')]")
+	WebElement btnconfirmadd;   
 	
 	@AndroidFindBy(xpath="//*[contains(@resource-id,':id/btnNext')]")
 	WebElement btnNext;
@@ -120,7 +120,7 @@ public class PageAddVehicle {
 		CommonUtility.GenericMethods.explicitWaitForWebElementOnly(driver,btnSaveVehicle,15);
 		btnSaveVehicle.click();
 		try {
-			CommonUtility.GenericMethods.explicitWaitForWebElementOnly(driver,btnconfirmadd,5);
+			CommonUtility.GenericMethods.explicitWaitForWebElementOnly(driver,btnconfirmadd,10);
 			btnconfirmadd.click();
 			
 		}

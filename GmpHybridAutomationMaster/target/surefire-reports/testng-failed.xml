@@ -1,25 +1,23 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
 <suite name="Failed suite [Suite]" guice-stage="DEVELOPMENT" verbose="0">
-  <parameter name="Tenant" value="GMP"/>
+  <parameter name="Tenant" value="Apcoa"/>
   <parameter name="Platform" value="Android"/>
-  <parameter name="Environment" value="QA"/>
-  <parameter name="Country" value="India"/>
-  <parameter name="Profile" value="Personal Profile"/>
+  <parameter name="Environment" value="Production"/>
+  <parameter name="Country" value="Denmark"/>
   <listeners>
     <listener class-name="TestNGListeners.ApcoaListeners"/>
   </listeners>
   <test thread-count="5" name="Test(failed)" verbose="0">
     <classes>
-      <class name="Mobile.TestLogin">
+      <class name="Mobile.NewUserReg">
         <methods>
-          <include name="initializeAssertions"/>
-          <include name="verifyInvoicePDF" invocation-numbers="0"/>
-          <include name="AssertAll"/>
-          <include name="initializeDriver"/>
+          <include name="VerifyRegistration"/>
           <include name="Teardown"/>
+          <include name="initializeDriver"/>
+          <include name="AddVehicle"/>
         </methods>
-      </class> <!-- Mobile.TestLogin -->
+      </class> <!-- Mobile.NewUserReg -->
     </classes>
   </test> <!-- Test(failed) -->
 </suite> <!-- Failed suite [Suite] -->

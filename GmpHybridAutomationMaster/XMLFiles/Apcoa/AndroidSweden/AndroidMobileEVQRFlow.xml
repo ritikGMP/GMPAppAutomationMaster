@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+<suite name="Suite">
+	<parameter name="Tenant" value="Apcoa" />
+	<parameter name="Environment" value="Production" />
+	<parameter name="Country" value="Sweden" />
+	<parameter name="Platform" value="Android" />
+	<parameter name="Profile" value="Personal" />
+	<listeners>
+		<listener class-name="TestNGListeners.ApcoaListeners"></listener>
+	</listeners>
+	<test thread-count="5" name="Test">
+		<classes>
+			<class name="Mobile.TestLogin">
+				<methods>
+					<include name="selectCountry" />
+					<include name="loginAppcoa" />
+					
+					<include name="EVTest" />
+					
+					
+					
+					<!-- <include name="ChangingDefaultProfile" /> -->
+					
+					
+				    
+					
+				</methods>
+			</class>
+		</classes>
+	</test> <!-- Test -->
+</suite> <!-- Suite -->
